@@ -5,3 +5,11 @@ This is where we need to put our presentation. Or we can do a website. Whatever 
 src - Contains all haskel files
 
 presentation - contains all files for the presentation.
+
+Presentation Ideas
+HelloWorld
+Compiling
+    .hi vs .hs vs .o 
+
+Multithreaded
+Functional Characteristics
