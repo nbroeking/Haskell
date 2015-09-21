@@ -12,15 +12,21 @@ Functionally programming is hard... like extremely hard. Especially, from people
 Table of Contents
 -----------------
 
-[Introduction](README.md)
-[Table of Contents](README.md)
+[Introduction](README.md)  
+[Table of Contents](README.md)  
 
 ####Chapter 1
-	[What is Functional Programming](./presentation/FunctionalProgramming.md)
-	[Haskell basics](./presentation/BasicHaskell.md)
-	[Compiling Haskell](./presentation/CompilingHaskell.md)
+[What is Functional Programming](./presentation/FunctionalProgramming.md)
+[Haskell basics](./presentation/BasicHaskell.md)
+[Compiling Haskell](./presentation/CompilingHaskell.md)
 	
 ####Chapter 2
+
+
+<!---
+At the bottom of every page we need a next and previous button 
+-->
+[Next](./prsentation/FunctionalProgramming.md)
 
 
 
