@@ -13,7 +13,7 @@ Table of Contents
 -----------------
 
 * [Introduction](./README.md#introduction)  
-* [Table of Contents](./README.md#table-of-contents))  
+* [Table of Contents](./README.md#table-of-contents)  
 
 ####Chapter 1
 * [What is Functional Programming](./presentation/FunctionalProgramming.md)  
@@ -39,4 +39,4 @@ At the bottom of every page we need a next and previous button
 -->
 
 <hr>
-[Next Page](./prsentation/FunctionalProgramming.md)
+[Next Page](./presentation/FunctionalProgramming.md)
