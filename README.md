@@ -16,34 +16,25 @@ Table of Contents
 [Table of Contents](README.md)  
 
 ####Chapter 1
-[What is Functional Programming](./presentation/FunctionalProgramming.md)
-[Haskell basics](./presentation/BasicHaskell.md)
-[Compiling Haskell](./presentation/CompilingHaskell.md)
+[What is Functional Programming](./presentation/FunctionalProgramming.md)  
+[Haskell basics](./presentation/BasicHaskell.md)  
+[Compiling Haskell](./presentation/CompilingHaskell.md)  
 	
 ####Chapter 2
+[Input](./presentation/Input.md)  
+[types of functions](./presentation/functions.md)  
+[A good example](./presentation/whatever.md)  
+
+####Chapter 4
+[Functors](./presentation/Functors.md)  
+[Monads](./presentation/Monads.md)  
+[Other advanced stuff that josh knows about and I don't](./presentation/stuff)  
+
+####Chapter 5
+[MultiThreading](./presentation/MultiThreading.md)  
 
 
 <!---
 At the bottom of every page we need a next and previous button 
 -->
 [Next](./prsentation/FunctionalProgramming.md)
-
-
-
-//Notes for what to include in project
-
-This is where we need to put our presentation. Or we can do a website. Whatever we want.
-
-src - Contains all haskel files
-
-presentation - contains all files for the presentation.
-
-Presentation Ideas
-HelloWorld
-Compiling
-    .hi vs .hs vs .o 
-
-Multithreaded
-Functional Characteristics
-
-We should probably go through everything on this webpage too :https://wiki.haskell.org/Learn_Haskell_in_10_minutes
