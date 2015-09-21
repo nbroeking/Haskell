@@ -12,8 +12,8 @@ Functionally programming is hard... like extremely hard. Especially, from people
 Table of Contents
 -----------------
 
-* [Introduction](README.md)  
-* [Table of Contents](README.md)  
+* [Introduction](./README.md#introduction)  
+* [Table of Contents](./README.md#table-of-contents))  
 
 ####Chapter 1
 * [What is Functional Programming](./presentation/FunctionalProgramming.md)  
@@ -38,5 +38,5 @@ Table of Contents
 At the bottom of every page we need a next and previous button 
 -->
 
-######Presentation
+<hr>
 [Next Page](./prsentation/FunctionalProgramming.md)
