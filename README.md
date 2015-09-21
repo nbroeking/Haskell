@@ -12,23 +12,23 @@ Functionally programming is hard... like extremely hard. Especially, from people
 Table of Contents
 -----------------
 
-[Introduction](README.md)  
-[Table of Contents](README.md)  
+* [Introduction](README.md)  
+* [Table of Contents](README.md)  
 
 ####Chapter 1
-[What is Functional Programming](./presentation/FunctionalProgramming.md)  
-[Haskell basics](./presentation/BasicHaskell.md)  
-[Compiling Haskell](./presentation/CompilingHaskell.md)  
+* [What is Functional Programming](./presentation/FunctionalProgramming.md)  
+* [Haskell basics](./presentation/BasicHaskell.md)  
+* [Compiling Haskell](./presentation/CompilingHaskell.md)  
 	
 ####Chapter 2
-[Input](./presentation/Input.md)  
-[types of functions](./presentation/functions.md)  
-[A good example](./presentation/whatever.md)  
+* [Input](./presentation/Input.md)  
+* [types of functions](./presentation/functions.md)  
+* [A good example](./presentation/whatever.md)  
 
 ####Chapter 4
-[Functors](./presentation/Functors.md)  
-[Monads](./presentation/Monads.md)  
-[Other advanced stuff that josh knows about and I don't](./presentation/stuff)  
+* [Functors](./presentation/Functors.md)  
+* [Monads](./presentation/Monads.md)  
+* [Other advanced stuff that josh knows about and I don't](./presentation/stuff)  
 
 ####Chapter 5
 [MultiThreading](./presentation/MultiThreading.md)  
@@ -37,4 +37,6 @@ Table of Contents
 <!---
 At the bottom of every page we need a next and previous button 
 -->
-[Next](./prsentation/FunctionalProgramming.md)
+
+######Presentation
+[Next Page](./prsentation/FunctionalProgramming.md)
