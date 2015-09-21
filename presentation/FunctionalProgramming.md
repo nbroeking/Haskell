@@ -25,5 +25,5 @@ At the bottom of every page we need a next and previous button
 -->
 
 <hr>
-[Home](../README.md)        [Back](../README.md#table-of-contents)        [Next Page](http://www.google.com)
+[Home](../README.md) | [Back](../README.md#table-of-contents) | [Next](http://www.google.com)
 
