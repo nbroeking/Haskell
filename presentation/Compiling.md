@@ -11,13 +11,15 @@ The Glasgow Haskell Compiler or ghc is the main Haskell compiler. It will compil
 
 To invoke the Glasgow Haskell Compiler first create a Haskell program.
 
-    main :: IO ()
-    main =
-        let list = [1, 3, 8, 11, 13]
-            loop [] = return ()
-            loop (x:xs) = print x >> loop xs
-            in
-            loop list
+```Haskell
+main :: IO ()
+main =
+    let list = [1, 3, 8, 11, 13]
+        loop [] = return ()
+        loop (x:xs) = print x >> loop xs
+        in
+        loop list
+```
 
 You may recognize this example from the previous slide. This is just a basic function that prints the contents of a list. Now we are ready to compile this program using the GHC compiler. We run ghc -w -o basicHaskell2 basicHaskell2.hs. This will output three files. 
 
@@ -27,12 +29,27 @@ You may recognize this example from the previous slide. This is just a basic fun
 
 *basicHaskell2 - Finally this is the binary that you can run. It is executable and behaves just like any other binary except that the originating code was Haskell and not C which probably many of you are used to. 
 
+Once these have been compiled running the code is very easy. Just enter ./basicHaskell2 and you will see the code run.
+
+![basichaskell2 native][Images/NativeHaskell2.png]  
+
 ####Interactive Shell
-The last option for running Haskell code is by using the Glasgow Haskell Compiler Interactive or GHCI. If you type GHCI in the command line you will get a interactive prompt for you to run Haskell code. For example lets run the Haskell code above in the interrupter. 
+The last option for running Haskell code is by using the Glasgow Haskell Compiler Interactive or GHCI. If you type GHCI in the command line you will get a interactive prompt for you to run Haskell code.
+
+Lets walk through a quick example first run ghci you should see something that looks an awful lot like
+
+![GHCI Shell][Images/openInteractive.png]  
+
+Once the shell is open then we can enter the code from basicHaskell2.hs line by line
+
+![basicHaskell2 Interactive][Images/basicHaskell2Interactive.png]  
+
+The code will run exactly the same and as you can see we get the list printed out. If you looked closely, or actually read what we are talking about you will notice one major difference. In the interactive shell needs :{ :} to enter in a block statement. Other than this small detail everything is exactly the same.
+
 
 <!---
 At the bottom of every page we need a next and previous button 
 -->
 <hr>
-[Home](../README.md) | [Back](../README.md#table-of-contents) | [Next](http://www.google.com)
+[Home](../README.md) | [Back](../README.md#AboutHaskell.md) | [Next](http://www.google.com)
 
