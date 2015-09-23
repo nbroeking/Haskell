@@ -1,24 +1,59 @@
 Functional Programming
 ----------------------
 
-In traditional imperative programming we define functions/classes/methods and then starting with main we give the computer a series of step by step instructions that it should perform. However with functional languages you are not telling the computer what to do step by step but instead your telling it what things are. For example in c you can do something like:  
+Functional Programming is one of the three major paradigms along with
+imperative and logic. Regardless of its reputation as being somewhat
+esoteric and impractical, functional programming actually has roots
+just as deep as imperative programming. 
 
-    int main(int argc, char* argv[]){
-        int x = 4;
-        x+= 3;
+Traditional imperative programming is what most people are familiar with.
+The thread of execution marches through each instruction from top to bottom,
+each of which mutate some aspect of state until the program terminates. For
+example, we may write a program in C that looks like:
 
-        printf("Your integer: %d\n", x);
+```c
+int main(int argc, char** argv)
+{
+    int list[] = {1, 3, 5, 8, 11, 13};
+    int length = sizeof(list) / sizeof(int);
+    int i = 0;
+    int x;
+
+    for(i = 0; i < length; ++ i) {
+        x = list[i];
+        x = x * x;
+        printf("%d\n", x);
     }
+}
+```
 
+Functional programming is fundamentally different from imperative programming.
+Since functional programming is all about avoiding state, in Haskell, this
+program would look fundamentally different.
 
-This tells the computer to set up the variables step by step then print the solution of the addition. However in functionally programming you can’t do this. You told the computer x was 5 then you told it x was something else? We don’t want to be liars because then we would be no better than Darth Vader himself. Instead we have to do something like:  
+```Haskell
+    main :: IO ()
+    main =
+        let list = [1, 3, 5, 8, 11, 13]
+            loop [] = return ()
+            loop (x:xs) = do 
+                let xsq = x * x
+                print xsq
+                loop xs
+            in
+            loop list
+```
 
+Here we construct a list, and also define a recursive function `loop` that
+takes the head element, prints the square of the element and calls itself on
+the tail until the list is empty.
 
-    main = let x = 4 in
-        y = x+3
-        printStrLn("Your integer: " ++ y
+To exasperate this difference, an avid Haskeller might write
 
-
+```Haskell
+    main :: IO ()
+    main = mapM_ (print . (^2)) [1, 3, 5, 8, 11, 13]
+```
 
 <!---
 At the bottom of every page we need a next and previous button 
