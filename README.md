@@ -16,7 +16,8 @@ Table of Contents
 * [Table of Contents](./README.md#table-of-contents)  
 
 ####Chapter 1
-* [What is Functional Programming](./presentation/FunctionalProgramming.md)  
+* [What is Functional Programming](./presentation/FunctionalProgramming.md)
+* [About Haskell](./presentation/AboutHaskell.md)  
 * [Haskell basics](./presentation/BasicHaskell.md)  
 * [Compiling Haskell](./presentation/CompilingHaskell.md)  
 	
