@@ -23,15 +23,18 @@ Table of Contents
 	
 ####Chapter 2: Type System
 * [Basic Types](./presentation/BasicTypes.md)
+* [Functions](./presentation/BasicTypes.md)
+* [First Class Functions](./presentation/FirstClassFunctions.md)
+
+####Chapter 3: Taking it to the next level
 * [Functors](./presentation/Functors.md)
+* [Applicatives](./presentation/Applicatives.md)
 * [Monads](./presentation/Monands.md)
 * [A good example](./presentation/whatever.md)  
 
-####Chapter 3
+####Chapter 4: Such advanced stuff you will cry
 * [Other advanced stuff that josh knows about and I don't](./presentation/stuff)  
-
-####Chapter 5
-[MultiThreading](./presentation/MultiThreading.md)  
+* [MultiThreading](./presentation/MultiThreading.md)  
 
 
 <!---
