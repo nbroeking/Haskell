@@ -31,7 +31,7 @@ You may recognize this example from the previous slide. This is just a basic fun
 
 Once these have been compiled running the code is very easy. Just enter ./basicHaskell2 and you will see the code run.
 
-![basichaskell2 native](Images/NativeHaskell2.png)  
+![basichaskell2 native](../Images/NativeHaskell2.png)  
 
 ####Interactive Shell
 The last option for running Haskell code is by using the Glasgow Haskell Compiler Interactive or GHCI. If you type GHCI in the command line you will get a interactive prompt for you to run Haskell code.
@@ -42,7 +42,7 @@ Lets walk through a quick example first run ghci you should see something that l
 
 Once the shell is open then we can enter the code from basicHaskell2.hs line by line
 
-![basicHaskell2 Interactive](Images/basicHaskell2Interactive.png)  
+![basicHaskell2 Interactive](../Images/basicHaskell2Interactive.png)  
 
 The code will run exactly the same and as you can see we get the list printed out. If you looked closely, or actually read what we are talking about you will notice one major difference. In the interactive shell needs :{ :} to enter in a block statement. Other than this small detail everything is exactly the same.
 
@@ -51,5 +51,5 @@ The code will run exactly the same and as you can see we get the list printed ou
 At the bottom of every page we need a next and previous button 
 -->
 <hr>
-[Home](../README.md) | [Back](../README.md#AboutHaskell.md) | [Next](http://www.google.com)
+[Home](../README.md) | [Back](../../README.md#AboutHaskell.md) | [Next](http://www.google.com)
 

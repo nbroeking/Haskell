@@ -16,10 +16,10 @@ Table of Contents
 * [Table of Contents](./README.md#table-of-contents)  
 
 ####Chapter 1: Introduction
-* [What is Functional Programming](./presentation/FunctionalProgramming.md)
-* [About Haskell](./presentation/AboutHaskell.md)  
-* [Haskell basics](./presentation/BasicHaskell.md)  
-* [Compiling Haskell](./presentation/CompilingHaskell.md)  
+* [What is Functional Programming](./presentation/Chapter1/FunctionalProgramming.md)
+* [About Haskell](./presentation/Chapter1/AboutHaskell.md)  
+* [Haskell basics](./presentation/Chapter1/BasicHaskell.md)  
+* [Compiling Haskell](./presentation/Chapter1/CompilingHaskell.md)  
 	
 ####Chapter 2: Type System
 * [Basic Types](./presentation/BasicTypes.md)
