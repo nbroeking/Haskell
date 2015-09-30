@@ -38,7 +38,7 @@ The last option for running Haskell code is by using the Glasgow Haskell Compile
 
 Lets walk through a quick example first run ghci you should see something that looks an awful lot like
 
-![GHCI Shell](Images/openInteractive.png)
+![GHCI Shell](../Images/openInteractive.png)
 
 Once the shell is open then we can enter the code from basicHaskell2.hs line by line
 
