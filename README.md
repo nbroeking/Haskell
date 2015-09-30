@@ -18,7 +18,7 @@ Table of Contents
 ####Chapter 1: Introduction
 * [What is Functional Programming](./presentation/Chapter1/FunctionalProgramming.md)
 * [About Haskell](./presentation/Chapter1/AboutHaskell.md)  
-* [Haskell basics](./presentation/Chapter1/BasicHaskell.md)  
+* [Basic Haskell](./presentation/Chapter1/BasicHaskell.md)  
 * [Compiling Haskell](./presentation/Chapter1/CompilingHaskell.md)  
 	
 ####Chapter 2: Type System

@@ -83,3 +83,9 @@ the program.
 
 This program prints just 500 lines from a file that has thousands. While it looks like the program
 reads in the whole file at once, it actually does not! It reads the file in chunks as needed.
+
+<!---
+At the bottom of every page we need a next and previous button 
+-->
+<hr>
+[Home](../../README.md) | [Back](FunctionalProgramming.md) | [Next](BasicHaskell.md)
