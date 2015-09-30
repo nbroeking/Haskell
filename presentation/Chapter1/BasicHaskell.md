@@ -11,14 +11,14 @@ int main(){
 }
 ```
 
-In Haskell main returns void or () and does Input/Output. So its return type is IO(). We will talk more about what this means in the Monad section… But we can write this as.
+In Haskell main returns void or () and does Input/Output. So its return type is IO(). We will talk more about what this means in the Monad section… but we can write this as.
 
 ```Haskell
 main::IO() —main returns IO()
 main = —do stuff
 ```
 
-Lets quickly explain what is going on. The first line, you can think of like a declaration. Now if you remember everything is a function and so main is a function that returns IO(). The next line we are specifying with main does. main = //function is defining the function. Lets take this a step further. Lets create main that declares two variables, adds them together, and prints the result. Our code looks like
+Lets quickly explain what is going on. The first line, you can think of like a declaration. Now if you remember everything is a function and so main is a function that has type of IO(). The next line we are specifying with main does. main = //function is defining the function. Lets take this a step further. Lets create main that declares two variables, adds them together, and prints the result. Our code looks like
 
 ```Haskell
 main::IO()
@@ -29,7 +29,7 @@ main = let x = 4
            print z
 ``` 
 
-To understand whats going on we need to step this into parts. Haskell is a functional language, we know we have said this at least 100 times but when you wrap your head around what that means it will make a lot more sense. We are defining a function, main and what does main do, it prints z. However in order for you to evaluate the expression you need variables. That is where the let comes in. In english we might say something like let x = y = z in the function print z. That is exactly what main function is doing but without all the filler words. 
+To understand whats going on we need to step this into parts. Haskell is a functional language, we know we have said this at least 100 times but when you wrap your head around what that means it will make a lot more sense. We are defining a function, main and what does main do, it prints z. However, in order for you to evaluate the expression you need variables. That is where the let comes in. In english we might say something like let x = y = z in the function print z. That is exactly what main function is doing but without all the filler words. 
 
 ####Programming Basics
 Now that we know basic Haskell we will take it even further to the basics that every programming language has. Functions, If statements, and loops. In order to show you this section we are going to create a basic factorial program that solves factorial for the number 20. 
@@ -124,3 +124,10 @@ factorial x =
 ```
 
 This program will keep asking the user for input and then calculate the factorial of the input. 
+
+<!---
+At the bottom of every page we need a next and previous button 
+-->
+
+<hr>
+[Home](../../README.md) | [Back](AboutHaskell.md) | [Next](CompilingHaskell.md)
