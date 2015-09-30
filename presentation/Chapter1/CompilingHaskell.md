@@ -4,10 +4,10 @@ Compiling
 Of course just writing code is pretty useless unless we have a way to actually run it. With Haskell there is three major ways to run code. You can either run it in an interpreter, using the Haskell interactive shell, or compile it nativity. Both have their advantages and of course because we are two very nice guys we will show you both as well as talk about the advantages and disadvantages of both. 
 
 ####Interpreter 
-Haskell has a very advanced interpreter, it is called RunHaskell and it can be invoked by calling RunHaskell <file>. The RunHaskell Interpreter may or may not be JIT. It depends I haven’t done enough research on it to be sure yet. 
+Haskell has a very advanced interpreter, it is called RunHaskell and it can be invoked by calling RunHaskell <file>. The interpreter parses the code in real time and will perform JIT compiling. This means that the interpreter only compiles the code as it needs it. Of course there are pros and cons for using an interpreter in any language. It's easy and doesn't require mulitple files. You can just run the code without having to compile however it is really slow. Compiling the Haskell code will get you a huge speed up because it is compiled down to the machine code. 
 
 ####Natively Compile
-The Glasgow Haskell Compiler or ghc is the main Haskell compiler. It will compile Haskell down to native code and will create a binary that can be run just like any c, or c++ compiled program. Obviously, this has some major benefits because you will get some incredibly fast and efficient programs if they are run natively.  
+Speaking of which, the Glasgow Haskell Compiler or ghc is the main Haskell compiler. It will compile Haskell down to native code and will create a binary that can be run just like any c, or c++ compiled program. Obviously, this has some major benefits because you will get some incredibly fast and efficient programs if they are run natively.  
 
 To invoke the Glasgow Haskell Compiler first create a Haskell program.
 
@@ -51,5 +51,5 @@ The code will run exactly the same and as you can see we get the list printed ou
 At the bottom of every page we need a next and previous button 
 -->
 <hr>
-[Home](../README.md) | [Back](../../README.md#AboutHaskell.md) | [Next](http://www.google.com)
+[Home](../../README.md) | [Back](BasicHaskell.md) | [Next](../Chapter2/BasicTypes.md)
 
