@@ -42,4 +42,4 @@ At the bottom of every page we need a next and previous button
 -->
 
 <hr>
-[Next Page](./presentation/FunctionalProgramming.md)
+[Next Page](./presentation/Chapter1/FunctionalProgramming.md)
