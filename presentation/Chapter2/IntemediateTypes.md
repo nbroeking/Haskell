@@ -129,3 +129,9 @@ Notice how versitile a function we just made! Our concat function can sum a
 list of numbers, it cat flatten a list of lists and it can build computations
 from a list of functions! This is an extremely powerful concept and the basis
 for great abstractions.
+
+This is a class that is actually already implemented in Haskell. It is called a
+`Monoid`. Any type that is a monoid must have an identity value (called mempty)
+and a function that combines a value with another value of the same type (called mappend)
+finally, all kinds of generic function have been created to work on all monoids including
+`mconcat`.
