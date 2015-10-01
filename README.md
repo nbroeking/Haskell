@@ -23,18 +23,11 @@ Table of Contents
 
 ####Chapter 2: Type System
 * [Basic Types](./presentation/Chapter2/BasicTypes.md)
-* [Advanced Types](./presentation/Chapter2/BasicTypes.md)
-* [Practical Example](./presentation/Chapter2/FirstClassFunctions.md)
+* [Intermediate Types](./presentation/Chapter2/IntermediateTypes.md)
+* [Basic Category Theory](./presentation/Chapter2/BasicCatigoryTheory.md)
 
-####Chapter 3: Taking it to the next level
-* [Functors](./presentation/Functors.md)
-* [Applicatives](./presentation/Applicatives.md)
-* [Monads](./presentation/Monands.md)
-* [A good example](./presentation/whatever.md)
-
-####Chapter 4: Such advanced stuff you will cry
+####Chapter 3: Real Life Haskell
 * [Other advanced stuff that josh knows about and I don't](./presentation/stuff)
-* [MultiThreading](./presentation/MultiThreading.md)
 
 
 <!---

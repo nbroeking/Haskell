@@ -140,4 +140,4 @@ finally, all kinds of generic function have been created to work on all monoids 
 At the bottom of every page we need a next and previous button 
 -->
 <hr>
-[Home](../../README.md) | [Back](BasicTypes.md) | [Next](BasicCatigoryTheory.md)
+[Home](../../README.md) | [Back](BasicTypes.md) | [Next](BasicCategoryTheory.md)
