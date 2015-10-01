@@ -306,4 +306,7 @@ in Haskell, we can write a semantically equivalent, generic version of our IntLi
 ```
 
 Here, the little 't' is the generic. It means we can apply any type as an argument
-to the List type and it uses that in all instances. We
+to the List type and it uses that in all instances. In functional programming,
+this can be considered to be a type function. `List` by itself is not a type, it
+takes an argument so while `List` is not a type, `List Int` is a type. We use this
+notion to say `List` has the _kind_ `* -> *`.
