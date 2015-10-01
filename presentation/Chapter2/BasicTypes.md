@@ -1,22 +1,26 @@
 Basic Types in Haskell
-======================
+----------------------
+Now that we have been showing you basic haskell we need to show you what types are there so you can actually write useful programs. The Haskell type system is based of the Hindley-Milner type system. Essentially, this means that the whole algebraic representation is based off of research done by Hindley and Milner. We aren't going to dive down into what this means but if your interested there are some great articles on wikipedia. 
+
 
 Haskell has a number of built in types. To start with, there is,
 `Integer`, `Boolean`, `String`, `Lists`, `Tuples` among others.
 
-### Integral Types
+Lets step through these one by one.
+
+#### Integral Types
 
 `Integers` in Haskell are like Python Integers, unbounded. In Haskell,
-Integers may be created with literal numebrs.
+Integers may be created with literal numbers.
 
 ```haskell
     let myInteger = 5 :: Integer
 ```
 
 Integers have some built in operators, like addition `+`, subtraction `-`,
-multiplication `*` and more.
+multiplication `*` and more. Pretty much everything that you have been using in every other language, ever.
 
-In Haskell, there are some different types of integers. Not only are
+However in Haskell, there are more than just one type of Integer. Not only are
 there `Integers` but there is also `Int`. `Int` is like `Integer`, except
 it is bounded, like an `int` in Java or C. While it is bounded, it is also
 a lot faster, so it is important to use the `Int` type if necessary.
@@ -28,40 +32,41 @@ and `int64_t` types in C.
 Finally, there are also `Word` types. These are like the unsigned types in
 C and C++.
 
-### Floating Types
+More or less these aren't any different than what every other language has. Differrent situations require different types of integers.
+
+#### Floating Types
 
 In addition to integral types, there are also Floating types. These types
 include `Float` and `Double`. These are exactly like the `float` and `double`
 types in other languages. Floats are like integrals, except they also implement
 floating division.
 
-### Bools
+#### Bools
 
 Bools in Haskell work just like booleans in Java. They have two constructors,
 True and False.
 
 
-### Lists
+#### Lists
 
 In Haskell, there are list types, denoted by `[a]` where `a` is the type the list holds.
 In Haskell, lists like these are implemented as linked lists, as they are in most
 other functional programming languages. The implementation as a linked list allows
 for very nice abstractions and works well with the purity system in Haskell.
 
-### Unit
+#### Unit
 
 In Haskell, and in many Functional programming languages, there is a notion of a type called
 `unit`. This type has exactly one representation and is denoted in Haskell by closing
-parenthasis `()`. The unit type in Haskell is extremely important because it encapsulates
+parenthesis `()`. The unit type in Haskell is extremely important because it encapsulates
 the notion of computation without returning a value. This is semantically roughly equivalent to the notion
 of `void` in imperative languages like Java; in functional programming, this name is avoided
 as `void` has a different meaning; `void` is the type that has no representations and can therefore
 never be constructed
 
-Algebraic Data Types
---------------------
+###Algebraic Data Types
 
-The Hindley-Milner typesystem is called an algebra of types because it defines a set of operators
+The Hindley-Milner type-system is called an algebra of types because it defines a set of operators
 and values (types) such that when these operators are applied to types new types are returned; just
 like addition and multiplication for numbers, and as we'll see there is significant overlap between
 type algebra and the algebra you learn in grade school.
@@ -69,12 +74,12 @@ type algebra and the algebra you learn in grade school.
 In Haskell, all new types are built from "primitive types" like `()`, `Integer`, `Int`, `Float`, etc.
 by concatenating them with these different type operators.
 
-### Pairs
+#### Pairs
 
 Pairs, or tuples, are a very important concept in Hindley-Milner type systems. It is effectively
-analogous to multiplication in school algebra. Tuples are created using the parenthasis:
+analogous to multiplication in school algebra. Tuples are created using the parenthesis:
 
-```haskell
+```Haskell
     let mytuple = (True, False) in ...
 ```
 
@@ -87,7 +92,7 @@ booleans and is semantically equivalent to `(Bool, Bool)` we can create such a t
 ```
 
 This is pretty straight forward to read if you know what you are looking at. First is the keyword
-`data`. This tells the compiler that we are going to create a new type. Next, `TwoBools`, is the name
+`data`. This tells the compiler that we are going to create a new data type. Next, `TwoBools`, is the name
 we are going to give to that type. The next part is a little confusing, `Two` is the name of the constructor
 we give to the object, and the next types `Bool Bool` are the types of the fields associated with this
 constructor. Notice that the fields do not have names. That is because we can reference them using
@@ -101,7 +106,7 @@ just another function that takes two `Bool`s and returns a TwoBools.
     Prelude> let mybools = Two True False
 ```
 
-#### Pattern matching
+###### Pattern matching
 
 Many functional programming languages have the concept of "pattern matching" and Haskell is no different. What
 is pattern matching? It is a way of decomposing a type into its parts. To pattern match, you simply replace
@@ -128,7 +133,7 @@ bigger structure
 ```
 
 This now prints just "False". Now a keen eye might question what would happen if
-we tried to deconsttruct with `(Two False a)`. Lets give it a try:
+we tried to deconstruct with `(Two False a)`. Lets give it a try:
 
 ```haskell
     Prelude> let (Two False a) = mybools
@@ -138,9 +143,9 @@ we tried to deconsttruct with `(Two False a)`. Lets give it a try:
 
 What happened there?! Well, we constructed mybools using the constructor `Two True False`,
 but yet we are trying to deconstruct it with that first value equal to `False`. Haskell is
-complaning then that the pattern supplied does not match the pattern used for construction.
+complaining then that the pattern supplied does not match the pattern used for construction.
 
-### Sum Types
+#### Sum Types
 
 We have now learned about pairs and how to create a new type from another type by using
 what is called a "product" combination, which is a fancy way of saying we paired the types
@@ -149,7 +154,7 @@ how it is similar, because we still must learn about "sum types".
 
 Sum types are one of the corner stones of the Hindley-Milner type system. It is roughly equivalent
 to mathematical addition. You take two types and you can either have one or the other, but
-not both. This is in contrast to product types (pairs) where, in our previos example, you must
+not both. This is in contrast to product types (pairs) where, in our previous example, you must
 have both bools present to have a TwoBool. This is not the case with sum types.
 
 This is achieved by the use of _multiple_ constructors, each with their own, distinct substructures.
@@ -193,7 +198,7 @@ like the following in C++:
     };
 ```
 
-#### Pattern Matching
+###### Pattern Matching
 
 Since we now can have very different representations of the same Type, it is no
 longer sufficient no use the naive pattern matching above. Instead, we must
@@ -249,12 +254,12 @@ returns a double, or the far more common and flexible version `double -> (double
 This is saying `div` has the type of a function that takes a double and returns a function
 that takes another double and returns the third double.
 
-Since the `->` operator is right-associative, the parenthasis may be dropped and the
+Since the `->` operator is right-associative, the parenthesis may be dropped and the
 type then becomes `double -> double -> double`. This is an extremely powerful notion
 of a function because it allows for partial application; the notion that you can
 provide some of the arguments to a function up front and apply the rest somewhere else.
 
-Functions are paramount in Haskell; afterall Haskell is a functional programming language.
+Functions are paramount in Haskell; after all Haskell is a functional programming language.
 Virtually everything is a function, even the expression
 
 ```haskell
@@ -310,3 +315,10 @@ to the List type and it uses that in all instances. In functional programming,
 this can be considered to be a type function. `List` by itself is not a type, it
 takes an argument so while `List` is not a type, `List Int` is a type. We use this
 notion to say `List` has the _kind_ `* -> *`.
+
+
+<!---
+At the bottom of every page we need a next and previous button 
+-->
+<hr>
+[Home](../../README.md) | [Back](../Chapter1/Compiling.md) | [Next](IntemediateTypes.md)
