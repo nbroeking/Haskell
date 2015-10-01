@@ -23,7 +23,7 @@ Table of Contents
 
 ####Chapter 2: Type System
 * [Basic Types](./presentation/Chapter2/BasicTypes.md)
-* [Intermediate Types](./presentation/Chapter2/IntermediateTypes.md)
+* [Intermediate Types](./presentation/Chapter2/IntemediateTypes.md)
 * [Basic Category Theory](./presentation/Chapter2/BasicCatigoryTheory.md)
 
 ####Chapter 3: Real Life Haskell
