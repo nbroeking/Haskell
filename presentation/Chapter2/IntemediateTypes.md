@@ -1,5 +1,5 @@
 Intermediate Types
-==================
+------------------
 
 In the previous section, we learned about basic types such as the primitives
 like `Int`, `Integer`, `Bool` etc. We also learned what product types and sum
@@ -89,9 +89,9 @@ Finally, we can create our own data and make it an instance of addable.
         zero = Fn id
 ```
 
-This essentially defines an intsance of addable for functions of the type `a -> a`
-(The reason we must wrap it in our own type is aut of the scope for now) using
-function composition for the adding function and the identitiy function as
+This essentially defines an instance of addable for functions of the type `a -> a`
+(The reason we must wrap it in our own type is out of the scope for now) using
+function composition for the adding function and the identity function as
 "zero".
 
 What is the point in doing all this you might be wondering? We now have 3 types in
@@ -107,7 +107,7 @@ We can define this function as such:
     concat (a:as) = add a (concat as)
 ```
 
-And tht is the whole implementation of the function. Now we can use this function in a
+And that is the whole implementation of the function. Now we can use this function in a
 number of interesting ways:
 
 ```haskell
@@ -125,7 +125,7 @@ number of interesting ways:
 the concat function then strings together to create a new function. The
 resulting function in this case is `f x = (x + 4) * 3 + 1`
 
-Notice how versitile a function we just made! Our concat function can sum a
+Notice how versatile a function we just made! Our concat function can sum a
 list of numbers, it cat flatten a list of lists and it can build computations
 from a list of functions! This is an extremely powerful concept and the basis
 for great abstractions.
@@ -135,3 +135,9 @@ This is a class that is actually already implemented in Haskell. It is called a
 and a function that combines a value with another value of the same type (called mappend)
 finally, all kinds of generic function have been created to work on all monoids including
 `mconcat`.
+
+<!---
+At the bottom of every page we need a next and previous button 
+-->
+<hr>
+[Home](../../README.md) | [Back](BasicTypes.md) | [Next](BasicCatigoryTheory.md)
