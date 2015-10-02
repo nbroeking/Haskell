@@ -247,7 +247,7 @@ data we can create functions like this.
 
 now we can write functions that use these functions
 
-```
+```Haskell
     main = 
         let (st0, _) = putToState empty "x" 5
             (st1, _) = putToState st0 "y" 2
@@ -262,7 +262,7 @@ This will print '7'. Each one of these functions updates a state and also return
 state. It is kind of verbose and hard to follow, but luckily we can create a monad
 to encapsulate this!
 
-```
+```Haskell
     data StateM a = StateM (State -> (State, a))
     instance Monad (StateM s) where
         return x = StateM (\s -> (s, x))
