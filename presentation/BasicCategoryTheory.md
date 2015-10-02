@@ -122,4 +122,80 @@ with them. This is what the famous `do` block in haskell does behind the scenes.
 For something to be a Monad, it must first be an applicaitve and also implement the
 `bind` operator.
 
-The bind 
+The bind function is similar to `fmap`, especially when the first two parameters are
+flipped:
+
+```haskell
+    fmap :: (a -> b) -> m a -> m b
+    flippedBind :: (a -> m b) -> m a -> m b
+```
+
+the only difference of course is that the function applied does _not_ have to return
+a pure value, it can return an impure value. This is where the true power of monads
+comes to bear. It is because using this, we can sequence our steps. The `Maybe` type
+is a monad. It defines the bind function as this:
+
+```haskell
+    instance Monad Maybe where
+        (>>=) Nothing _ = Nothing 
+        (>>=) (Just x) fn = fn x
+        return = Just
+```
+
+This is very useful for detecting errors and handling "null" values. For example
+if we have some program that tries to read data from a map, we can sequence this
+with
+
+```haskell
+    import Data.Map
+
+    data Person = Person {
+        age :: String,
+        occupation :: String,
+        hairColor :: String,
+    }
+    
+    jsonToMaybePerson :: Map String String -> Maybe Person
+    jsonToMaybePerson dat =
+        lookup "age" dat >>= \ageStr ->
+        lookup "occupation" dat >>= \occupation ->
+        lookup "hairColor" dat >>= \hair ->
+        Just (Person (read ageStr) occupation hair)
+```
+
+The `lookup` function returs `Nothing` if that key is not in the map.
+We can make this function more terse by using haskell's do notation:
+
+```haskell
+    jsonToMaybePerson dat = do
+        ageStr <- lookup "age"  dat
+        occupation <- lookup "occupation" dat
+        hair <- lookup "hairColor"
+        Just (Person ageStr occupation hair)
+```
+
+In fact, we can make this extremely short by using some of the functions
+from the previous typeclasses
+
+```haskell
+jsonToMaybePerson dat = 
+    (fmap Person (lookup "age" dat)) <*>
+    lookup "occupation" dat <*>
+    lookup "hairColor"
+```
+
+In Java, the way to write this function is something like
+
+```haskell
+    public Person jsonToMaybePerson(Map<String, String> blob) {
+        String age = blob.get("age");
+        String occupation = blob.get("occupation");
+        String hair = blob.get("hair");
+
+        if(age == null || occupation == null || hair == null) [
+            return null;
+        }
+
+        return new Person(age, occupation, hair)
+    }
+```
