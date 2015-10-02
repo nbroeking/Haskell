@@ -29,6 +29,9 @@ Table of Contents
 ####Chapter 4: Advanced 
 * [Basic Category Theory](./presentation/BasicCatigoryTheory.md)
 
+####Conclusion
+* [Conclusion](./presentation/Conclusion.md)
+
 <!---
 At the bottom of every page we need a next and previous button
 -->
