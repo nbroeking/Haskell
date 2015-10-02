@@ -71,3 +71,11 @@ We can even define a function as being a Functor.
 ```
 
 This is just using the function composition operator to create the mapping.
+
+
+
+<!---
+At the bottom of every page we need a next and previous button 
+-->
+<hr>
+[Home](../README.md) | [Back](./presentation/IntemediateTypes.md) | [Next](../Conclusion.md)
