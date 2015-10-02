@@ -160,7 +160,7 @@ with
         lookup "age" dat >>= \ageStr ->
         lookup "occupation" dat >>= \occupation ->
         lookup "hairColor" dat >>= \hair ->
-        Just (Person (read ageStr) occupation hair)
+        return (Person (read ageStr) occupation hair)
 ```
 
 The `lookup` function returs `Nothing` if that key is not in the map.
@@ -170,8 +170,8 @@ We can make this function more terse by using haskell's do notation:
     jsonToMaybePerson dat = do
         ageStr <- lookup "age"  dat
         occupation <- lookup "occupation" dat
-        hair <- lookup "hairColor"
-        Just (Person ageStr occupation hair)
+        hair <- lookup "hair"
+        return (Person ageStr occupation hair)
 ```
 
 In fact, we can make this extremely short by using some of the functions
@@ -181,21 +181,120 @@ from the previous typeclasses
 jsonToMaybePerson dat = 
     (fmap Person (lookup "age" dat)) <*>
     lookup "occupation" dat <*>
-    lookup "hairColor"
+    lookup "hair"
 ```
 
 In Java, the way to write this function is something like
 
-```haskell
+```java
     public Person jsonToMaybePerson(Map<String, String> blob) {
         String age = blob.get("age");
         String occupation = blob.get("occupation");
         String hair = blob.get("hair");
 
-        if(age == null || occupation == null || hair == null) [
+        if(age == null || occupation == null || hair == null) {
             return null;
         }
 
         return new Person(age, occupation, hair)
     }
 ```
+
+We are not yet done. With just these basic functions implemented, so much
+is possible. In fact, Haskell provides a library called `Control.Monad` that
+has many of these very useful abstractions provided. One of which is called
+`sequence :: (Monad m) => [m a] -> m [a]` and is implemented as
+
+```haskell
+sequence [] = return []
+sequence (ma:mas) = do
+    a <- ma
+    as <- mas
+    return (a:as)
+```
+
+so we can rewrite the above even as this
+
+```haskell
+    jsonToMaybePerson dat = do
+        [age, occupation, hair] <- sequence( map (\s -> Map.lookup s dat) ["age", "occupation", "hair"] )
+        return (Person age occupation hair)
+```
+
+#### State Monads
+
+Monads are very useful for carrying around state in a pure way. Imagine we want
+to carry around some state `U`. In a pure functional language we need to send
+in the state to a function and that function must return a new, mutated state
+along with what it is actually returning.
+
+```haskell
+    stateModifyingFunction :: U -> b -> (U, a)
+```
+
+this function takes some state, U, and an argument of type `b` and returns a new state
+along with a return type of type `a`. If we have a map as our state where we store
+data we can create functions like this.
+
+```haskell
+    type State = Map String Int -- like a `typedef` in C
+
+    getFromState :: State -> String -> (State, Int)
+    getFromState state key = (map, lookupWithDefault 0 key state)
+
+    putToState :: State -> String -> Int -> (State, ()) -- returns `void`
+    putToState state key val = (insert key val state, ())
+```
+
+now we can write functions that use these functions
+
+```
+    main = 
+        let (st0, _) = putToState empty "x" 5
+            (st1, _) = putToState st0 "y" 2
+            (st2, x) = getFromState st1 "x"
+            (st3, y) = getFromState st2 "y"
+            (st4, _) = putToState "z" (x + y)
+            (st5, z) = getFromState "z"
+            in do print z
+```
+
+This will print '7'. Each one of these functions updates a state and also returns a
+state. It is kind of verbose and hard to follow, but luckily we can create a monad
+to encapsulate this!
+
+```
+    data StateM a = StateM (State -> (State, a))
+    instance Monad (StateM s) where
+        return x = StateM (\s -> (s, x))
+        (>>=) (StateM fn1) fn2 = StateM (\s ->
+                        let (newstate, a) = fn1 s
+                            (StateM fn) = fn2 a
+                            in
+                            fn newstate
+                        )
+
+```
+
+This probably looks very confusing, but if you work it out it might statrt to make sense.
+All this is doing is encapsulating the explicit passing of state around. We can now implement
+functions like these.
+
+```haskell
+    getFromState :: String -> StateM Int
+    getFromState key = StateM $ \state -> (state, getWithDefault 0 key state)
+
+    putToState :: String -> Int -> StateM ()
+    putToState key val = StateM $ \state -> (insert key val state, ())
+
+    runState :: StateM a -> a
+    runState (StateM fn) = fn empty -- run the state starting with an empty map
+```
+
+#### The IO Monad
+
+As stated way back in the beginning, Haskell is a pure functional language that has
+no side effects. Does that mean that Haskell does not allow the user to read a write
+from a file or print to the console? NO! Instead, all these operations are wrapped
+in what is the most important monad of all, the IO monad. This is a monad that can
+be thought to carry around
