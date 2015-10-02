@@ -51,5 +51,5 @@ The code will run exactly the same and as you can see we get the list printed ou
 At the bottom of every page we need a next and previous button 
 -->
 <hr>
-[Home](../README.md) | [Back](BasicHaskell.md) | [Next](../BasicTypes.md)
+[Home](../README.md) | [Back](BasicHaskell.md) | [Next](BasicTypes.md)
 
