@@ -181,4 +181,4 @@ factorial of the input.
 At the bottom of every page we need a next and previous button 
 -->
 <hr>
-[Home](../README.md) | [Back](../AboutHaskell.md) | [Next](CompilingHaskell.md)
+[Home](../README.md) | [Back](AboutHaskell.md) | [Next](CompilingHaskell.md)
