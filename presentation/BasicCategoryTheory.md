@@ -247,7 +247,7 @@ data we can create functions like this.
 
 now we can write functions that use these functions
 
-```
+```Haskell
     main = 
         let (st0, _) = putToState empty "x" 5
             (st1, _) = putToState st0 "y" 2
@@ -262,7 +262,7 @@ This will print '7'. Each one of these functions updates a state and also return
 state. It is kind of verbose and hard to follow, but luckily we can create a monad
 to encapsulate this!
 
-```
+```Haskell
     data StateM a = StateM (State -> (State, a))
     instance Monad (StateM s) where
         return x = StateM (\s -> (s, x))
@@ -292,7 +292,7 @@ functions like these.
 
 Now we can use this monad with
 
-```haskell
+```Haskell
     main =
         let z = runState $ do
                     putToState "x" 5
@@ -334,9 +334,9 @@ imperative model. In fact there are some builtin functions called `mapM` and `ma
 They define monadic maps of the type `mapM :: (a -> m b) -> [a] -> m [b]` and `mapM :: (a -> m b) -> [a] -> m ()`
 the latter being the same as `mapM` except we don't care about what is actually returned.
 
-Using these we can write a simle counter in Haskell this way
+Using these we can write a simple counter in Haskell this way
 
-```haskell
+```Haskell
     main = mapM print [1..10]
 ```
 
@@ -360,4 +360,4 @@ of using Monads!
 At the bottom of every page we need a next and previous button 
 -->
 <hr>
-[Home](../README.md) | [Back](IntermediateTypes.md) | [Next](Conclustion.md)
+[Home](../README.md) | [Back](IntermediateTypes.md) | [Next](Conclusion.md)
