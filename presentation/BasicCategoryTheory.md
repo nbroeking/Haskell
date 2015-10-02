@@ -327,6 +327,34 @@ conceptually that is what it is doing.
 When a call to `putStrLn` in called, the IO monad is conceptually rebuilding the universe
 except that in the new universe, some bytes have been written to stdout.
 
+#### Loops
+
+Monads are useful to sequence steps. With this we can create loops similar to the
+imperative model. In fact there are some builtin functions called `mapM` and `mapM_`.
+They define monadic maps of the type `mapM :: (a -> m b) -> [a] -> m [b]` and `mapM :: (a -> m b) -> [a] -> m ()`
+the latter being the same as `mapM` except we don't care about what is actually returned.
+
+Using these we can write a simle counter in Haskell this way
+
+```haskell
+    main = mapM print [1..10]
+```
+
+This just prints the numbers from 1 to 10.
+
+#### The best imperative language
+
+Every once in a while someone on the internet refers to Haskell as the best
+imperative language because of its incredible ability to abstract sequencing
+of actions through monads. It is thought of as in a normal imperative language,
+everything is happening under a fixed monad ... the IO monad, and that the
+semicolon is actually an operator that sequences these operations that mutate the
+state of the world. The Haskell abstraction allows the programmer to escape that
+restriction and play in worlds where the semicolon may be overloaded to mean
+something other than just sequencing impure actions -- and that is the true power
+of using Monads!
+
+[Check out this link](http://stackoverflow.com/questions/6622524/why-is-haskell-sometimes-referred-to-as-best-imperative-language)
 
 <!---
 At the bottom of every page we need a next and previous button 
