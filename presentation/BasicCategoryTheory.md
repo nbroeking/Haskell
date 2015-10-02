@@ -77,7 +77,7 @@ This is just using the function composition operator to create the mapping.
 
 
 Applicative's are a middle-child of sorts between functors and Monads. The
-typeclass for these applicatives is:
+typeclass for these applicative's is:
 
 ```Haskell
     class (Functor f) => Applicative f where
@@ -93,7 +93,7 @@ The `(<*>)` operator just takes a function wrapped in an applicative and allows
 the user to apply an argument wrapped in the same applicative and get back a result
 wrapped in the same applicative.
 
-The `pure` function takes a pure value and wraps it in an applicative. Applicatives
+The `pure` function takes a pure value and wraps it in an applicative. Applicative's
 are more powerful than functors. From any applicative, we can implement fmap as
 
 ```Haskell
@@ -163,7 +163,7 @@ with
 ```
 
 The `lookup` function returns `Nothing` if that key is not in the map.
-We can make this function more terse by using haskell's do notation:
+We can make this function more terse by using Haskell's do notation:
 
 ```Haskell
     jsonToMaybePerson dat = do
@@ -204,7 +204,7 @@ is possible. In fact, Haskell provides a library called `Control.Monad` that
 has many of these very useful abstractions provided. One of which is called
 `sequence :: (Monad m) => [m a] -> m [a]` and is implemented as
 
-```haskell
+```Haskell
 sequence [] = return []
 sequence (ma:mas) = do
     a <- ma
@@ -214,7 +214,7 @@ sequence (ma:mas) = do
 
 so we can rewrite the above even as this
 
-```haskell
+```Haskell
     jsonToMaybePerson dat = do
         [age, occupation, hair] <- sequence( map (\s -> Map.lookup s dat) ["age", "occupation", "hair"] )
         return (Person age occupation hair)
@@ -227,7 +227,7 @@ to carry around some state `U`. In a pure functional language we need to send
 in the state to a function and that function must return a new, mutated state
 along with what it is actually returning.
 
-```haskell
+```Haskell
     stateModifyingFunction :: U -> b -> (U, a)
 ```
 
@@ -235,7 +235,7 @@ this function takes some state, U, and an argument of type `b` and returns a new
 along with a return type of type `a`. If we have a map as our state where we store
 data we can create functions like this.
 
-```haskell
+```Haskell
     type State = Map String Int -- like a `typedef` in C
 
     getFromState :: State -> String -> (State, Int)
@@ -275,11 +275,11 @@ to encapsulate this!
 
 ```
 
-This probably looks very confusing, but if you work it out it might statrt to make sense.
+This probably looks very confusing, but if you work it out it might start to make sense.
 All this is doing is encapsulating the explicit passing of state around. We can now implement
 functions like these.
 
-```haskell
+```Haskell
     getFromState :: String -> StateM Int
     getFromState key = StateM $ \state -> (state, getWithDefault 0 key state)
 
