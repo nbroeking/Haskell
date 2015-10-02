@@ -24,7 +24,7 @@ Table of Contents
 
 ####Chapter 3: Type System
 * [Basic Types](./presentation/BasicTypes.md)
-* [Intermediate Types](./presentation/IntemediateTypes.md)
+* [Intermediate Types](./presentation/IntermediateTypes.md)
 
 ####Chapter 4: Advanced 
 * [Basic Category Theory](./presentation/BasicCategoryTheory.md)
