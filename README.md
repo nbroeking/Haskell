@@ -27,7 +27,7 @@ Table of Contents
 * [Intermediate Types](./presentation/IntemediateTypes.md)
 
 ####Chapter 4: Advanced 
-* [Basic Category Theory](./presentation/BasicCatigoryTheory.md)
+* [Basic Category Theory](./presentation/BasicCategoryTheory.md)
 
 ####Conclusion
 * [Conclusion](./presentation/Conclusion.md)

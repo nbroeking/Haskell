@@ -1,5 +1,5 @@
-Compiling
----------
+Compiling Haskell
+-----------------
 
 Of course just writing code is pretty useless unless we have a way to actually run it. With Haskell there is three major ways to run code. You can either run it in an interpreter, using the Haskell interactive shell, or compile it nativity. Both have their advantages and of course because we are two very nice guys we will show you both as well as talk about the advantages and disadvantages of both. 
 
