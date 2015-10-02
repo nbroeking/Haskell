@@ -176,3 +176,9 @@ factorial x =
 
 This program will keep asking the user for input and then calculate the
 factorial of the input.
+
+<!---
+At the bottom of every page we need a next and previous button 
+-->
+<hr>
+[Home](../README.md) | [Back](../AboutHaskell.md) | [Next](CompilingHaskell.md)
