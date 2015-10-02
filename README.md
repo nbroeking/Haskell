@@ -19,7 +19,7 @@ Table of Contents
 * [About Haskell](./presentation/AboutHaskell.md)
 
 ####Chapter 2: Introduction to Haskell
-* [Haskell basics](./presentation/BasicHaskell.md)
+* [Basic Haskell](./presentation/BasicHaskell.md)
 * [Compiling Haskell](./presentation/CompilingHaskell.md)
 
 ####Chapter 3: Type System
