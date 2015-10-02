@@ -321,4 +321,4 @@ notion to say `List` has the _kind_ `* -> *`.
 At the bottom of every page we need a next and previous button 
 -->
 <hr>
-[Home](../../README.md) | [Back](../Chapter1/CompilingHaskell.md) | [Next](IntemediateTypes.md)
+[Home](../README.md) | [Back](../CompilingHaskell.md) | [Next](IntemediateTypes.md)

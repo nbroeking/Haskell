@@ -11,28 +11,27 @@ Functionally programming is hard... like extremely hard. Especially, from people
 
 Table of Contents
 -----------------
-
 * [Introduction](./README.md#introduction)
 * [Table of Contents](./README.md#table-of-contents)
 
-####Chapter 1: Introduction
-* [What is Functional Programming](./presentation/Chapter1/FunctionalProgramming.md)
-* [About Haskell](./presentation/Chapter1/AboutHaskell.md)
-* [Haskell basics](./presentation/Chapter1/BasicHaskell.md)
-* [Compiling Haskell](./presentation/Chapter1/CompilingHaskell.md)
+####Chapter 1: Introduction To Functional Languages
+* [What is Functional Programming](./presentation/FunctionalProgramming.md)
+* [About Haskell](./presentation/AboutHaskell.md)
 
-####Chapter 2: Type System
-* [Basic Types](./presentation/Chapter2/BasicTypes.md)
-* [Intermediate Types](./presentation/Chapter2/IntemediateTypes.md)
-* [Basic Category Theory](./presentation/Chapter2/BasicCatigoryTheory.md)
+####Chapter 2: Introduction to Haskell
+* [Haskell basics](./presentation/BasicHaskell.md)
+* [Compiling Haskell](./presentation/CompilingHaskell.md)
 
-####Chapter 3: Real Life Haskell
-* [Other advanced stuff that josh knows about and I don't](./presentation/stuff)
+####Chapter 3: Type System
+* [Basic Types](./presentation/BasicTypes.md)
+* [Intermediate Types](./presentation/IntemediateTypes.md)
 
+####Chapter 4: Advanced 
+* [Basic Category Theory](./presentation/BasicCatigoryTheory.md)
 
 <!---
 At the bottom of every page we need a next and previous button
 -->
 
 <hr>
-[Next Page](./presentation/Chapter1/FunctionalProgramming.md)
+[Next Page](./presentation/FunctionalProgramming.md)
