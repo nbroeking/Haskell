@@ -254,8 +254,8 @@ now we can write functions that use these functions
             (st1, _) = putToState st0 "y" 2
             (st2, x) = getFromState st1 "x"
             (st3, y) = getFromState st2 "y"
-            (st4, _) = putToState "z" (x + y)
-            (st5, z) = getFromState "z"
+            (st4, _) = putToState st3 "z" (x + y)
+            (st5, z) = getFromState st4 "z"
             in do print z
 ```
 
@@ -291,10 +291,39 @@ functions like these.
     runState (StateM fn) = fn empty -- run the state starting with an empty map
 ```
 
+Now we can use this monad with
+
+```haskell
+    main =
+        let z = runState $ do
+                    putToState "x" 5
+                    putToState "y" 2
+                    x <- getFromState "x"
+                    y <- getFromState "y"
+                    putToState "z" (x + y)
+                    getFromState "z"
+        in print z
+```
+
+Now it is starting to look like something a little more familiar from
+imperative programming languages. It is almost semantically the same
+as the long-winded example, except all the state passing is done
+under the covers by the monad.
+
+Haskell has a more general version of this State monad called `State`, but
+instead of restricted to using a `Map String String` as its state, it can
+use any type and lets the user retrieve and set that state.
+
 #### The IO Monad
 
 As stated way back in the beginning, Haskell is a pure functional language that has
 no side effects. Does that mean that Haskell does not allow the user to read a write
 from a file or print to the console? NO! Instead, all these operations are wrapped
 in what is the most important monad of all, the IO monad. This is a monad that can
-be thought to carry around
+be thought to carry around state. We can think of it as like the state monad above,
+but rather than carrying around a `Map String String` as its state, it carries around
+the _entire_ universe as its state. Of course it isn't implemented this way, but
+conceptually that is what it is doing.
+
+When a call to `putStrLn` in called, the IO monad is conceptually rebuilding the universe
+except that in the new universe, some bytes have been written to stdout.
