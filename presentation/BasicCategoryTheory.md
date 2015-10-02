@@ -73,9 +73,53 @@ We can even define a function as being a Functor.
 This is just using the function composition operator to create the mapping.
 
 
+Applicative
+-----------
 
-<!---
-At the bottom of every page we need a next and previous button 
--->
-<hr>
-[Home](../README.md) | [Back](IntemediateTypes.md) | [Next](Conclusion.md)
+Applicatives are a middle-child of sorts between functors and Monads. The
+typeclass for these applicatives is:
+
+```haskell
+    class (Functor f) => Applicative f where
+        (<*>) :: f (a -> b) -> f a -> f b
+        pure :: a -> f a
+```
+
+The strage `(Functor f) =>` bit is just saying that for a type to be an
+Applicative, then it must also be a Functor. In addition to the
+`fmap` function, it also adds the `(<*>)` operator and the `pure` function.
+
+The `(<*>)` operator just takes a function wrapped in an applicative and allows
+teh user to apply an argument wrapped in the same applicative and get back a result
+wrapped in the same applicative.
+
+The `pure` function takes a pure value and wraps it in an applicative. Applicatives
+are more powerful than functors. From any applicative, we can implement fmap as
+
+```haskell
+    fmap :: (Applicative f) => (a -> b) -> f a -> f b
+    fmap fn arg = pure fn <*> arg
+```
+
+However, it is impossible to implement either `(<*>)` or `pure` with just `fmap`.
+
+
+Monads
+------
+
+Monads are the most powerful abstraction of the three we have discussed. The typeclass
+looks like:
+
+```haskell
+    class (Applicative m) => Monad m where
+        (>>=) :: m a -> (a -> m b) -> m b
+        return :: a -> m a
+```
+
+Monads are incredibly important in Haskell. They even have special syntax for dealing
+with them. This is what the famous `do` block in haskell does behind the scenes.
+
+For something to be a Monad, it must first be an applicaitve and also implement the
+`bind` operator.
+
+The bind 
